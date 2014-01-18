@@ -22,16 +22,18 @@ import java.util.*;
 
 
 public class CmdLine {
-	private HashMap	argMap;
-
+	private HashMap<String, Object> argMap;
+	
 	//
 	// singleton this object... main reason for this is so that a main object can
 	// set it up, but then not have to pass it around to other methods that may 
 	// need to access cmdline args.  Simple static methods to access, done.
 	private static CmdLine	singleton;	
 	private CmdLine() {		// no external instantiations of the object allowed, just internal
-		argMap = new HashMap();
+		argMap = new HashMap<String, Object>();
+		
 	}	
+	@Override
 	public Object clone() throws CloneNotSupportedException {		// don't let anyone clone the object
 		throw new CloneNotSupportedException();
 	}
@@ -65,13 +67,15 @@ public class CmdLine {
 					key = arg.substring( 0, offset ).substring( 1 );	// remove the '-' too
 					value = arg.substring( offset+1 );
 
-					cl.argMap.put( key, value );
+					
+					cl.argMap.put(key, value);
+					
 				}
 				else {
 					// this is a plain flag-type option, "-debug"
 					key = arg.substring( 1 );
-
-					cl.argMap.put( key, "true" );
+					cl.argMap.put(key,  "true");
+					
 				}
 			}
 			else {
@@ -95,17 +99,19 @@ public class CmdLine {
 	public static Set keySet() {
 		return CmdLine.init().argMap.keySet();
 	}
+	
 	public static String get( String key ) {
-		return (String) CmdLine.init().argMap.get( key );
+		return CmdLine.init().argMap.get( key );
 	}
-	public static String getString( String key ) {
-		return (String) CmdLine.init().argMap.get( key );
-	}
-	public static Integer getInteger( String key ) {
-		return (Integer) CmdLine.init().argMap.get( key );
-	}
+//	public static String getString( String key ) {
+//		return CmdLine.init().argMap.get( key );
+//	}
+//	public static Integer getInteger( String key ) {
+//		return (Integer) CmdLine.init().argMap.get( key );
+//	}
 	public static void put( String key, String value ) {
 		CmdLine.init().argMap.put( key, value );
 	}
+
 
 }

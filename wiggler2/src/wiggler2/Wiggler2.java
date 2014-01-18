@@ -1,11 +1,7 @@
 package wiggler2;
 
-import java.awt.AWTException;
 import java.awt.MouseInfo;
 import java.awt.Robot;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-// import gnu.getopt.GetOpt;
 
 
 
@@ -118,7 +114,7 @@ public class Wiggler2 {
 			    robot.mouseMove( baseX, baseY );
 			    
 			    // reset the timer to 70% and let the idle loop continue
-			    timer = (int) ((float)idleDelay * .7f);
+			    timer = (int) (idleDelay * .7f);
 			}
 		} 
 		catch ( Exception e ) {
