@@ -12,7 +12,6 @@ public class Wiggler2 {
 	 * @param args
 	 */
 	public static void main( String[] args ) {
-		
 		wiggler( args );
 		
 		// foo( String.class );

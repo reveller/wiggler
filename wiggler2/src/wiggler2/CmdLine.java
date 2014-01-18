@@ -96,12 +96,12 @@ public class CmdLine {
 		}
 	}
 	
-	public static Set keySet() {
+	public static <E> Set<String> keySet(){
 		return CmdLine.init().argMap.keySet();
 	}
 	
 	public static String get( String key ) {
-		return CmdLine.init().argMap.get( key );
+		return (String) CmdLine.init().argMap.get( key );
 	}
 //	public static String getString( String key ) {
 //		return CmdLine.init().argMap.get( key );
