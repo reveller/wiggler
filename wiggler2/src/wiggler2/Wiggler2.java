@@ -47,6 +47,7 @@ public class Wiggler2 {
 			}
 			
 			
+			
 //			Getopt g = new Getopt("wiggler", args, "i:t:"); //-D to enable debug log
 //			while((opt = g.getopt()) != -1) {
 //			    switch(opt){

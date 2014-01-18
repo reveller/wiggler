@@ -103,15 +103,7 @@ public class CmdLine {
 	public static String get( String key ) {
 		return (String) CmdLine.init().argMap.get( key );
 	}
-//	public static String getString( String key ) {
-//		return CmdLine.init().argMap.get( key );
-//	}
-//	public static Integer getInteger( String key ) {
-//		return (Integer) CmdLine.init().argMap.get( key );
-//	}
 	public static void put( String key, String value ) {
 		CmdLine.init().argMap.put( key, value );
 	}
-
-
 }
