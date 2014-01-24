@@ -80,5 +80,9 @@
             <report format="frames" todir="${junit.output.dir}"/>
         </junitreport>
     </target>
+    <target name="test" description="--> run unit tests and reports">
+      <fail if="tests.failed" unless="ignore.tests.failed">Unit tests failed; see:
+      </fail>
+    </target>
 </project>
 
